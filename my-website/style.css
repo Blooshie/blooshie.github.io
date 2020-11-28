@@ -1,1 +1,221 @@
-safd
+:root {
+    --default-width: 100vw;
+    --header-text-size-mobile: 25px;
+    --header-text-size-desktop: 40px;
+    --article-h1-text-size-mobile: 27px;
+    --article-h1-text-size-desktop: 37px;
+    --article-p-text-size-mobile: 18px;
+    --article-p-text-size-desktop: 22px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Varela Round', sans-serif;
+}
+
+h1,
+h2,
+h3,
+p {
+    width: var(--default-width) / 2;
+}
+
+html {
+    width: var(--default-width);
+    overflow-y: overlay;
+}
+
+body {
+    width: var(--default-width);
+}
+
+#header {
+    display: flex;
+    max-height: 14%;
+    background: linear-gradient( to bottom right, rgba(242, 58, 41, 0.8) 0%, rgba(242, 182, 109, 0.9) 100%);
+    height: 16vh;
+}
+
+#header img {
+    margin-left: 3%;
+    height: 100%;
+    display: inline-block;
+    border: transparent 3px;
+    border-radius: 22px;
+}
+
+#header h1 {
+    font-size: 25px;
+    margin-left: 3%;
+    align-self: center;
+    animation: 1s ease-out 0s 1 slideInFromTop;
+}
+
+.article {
+    margin-top: 2%;
+    margin-bottom: 0.5%;
+    position: relative;
+    width: 50vw;
+    transition: ease-in-out 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#articles {
+    width: var(--default-width);
+    display: flex;
+    flex-direction: column;
+    /*background: radial-gradient(rgba(220, 207, 236, 1), rgba(220, 207, 236, 0.1));*/
+    background: rgb(242, 58, 41);
+    background: linear-gradient(90deg, rgba(204, 129, 114, 1) 0%, rgba(214, 169, 35, 1) 100%);
+}
+
+#js-button {
+    background: rgb(192, 36, 37);
+    /*background: linear-gradient(90deg, rgba(192, 36, 37, 1) 0%, rgba(240, 203, 53, 1) 100%);*/
+    margin: auto;
+    border: solid 2px;
+    border-radius: 55%;
+    padding: 9px;
+}
+
+#js-button:hover {
+    transition: all 1.25s;
+    border-color: powderblue;
+    background-color: brown;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-200%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(500%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.article h1 {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.article button {
+    animation: 1s ease-out 0s 1 slideInFromRight;
+}
+
+.article p {
+    opacity: 0;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.article h1,
+p,
+button {
+    width: var(--default-width) / 2;
+    text-align: center;
+}
+
+#footer {
+    display: flex;
+    align-items: space-evenly;
+    justify-content: center;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#footer div {
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: opacity 0.4s;
+    border: 1px transparent;
+    transition: border-radius 3s ease-in;
+}
+
+#footer div a {
+    padding: 0 3%;
+    height: 100%;
+}
+
+#footer:last-child {
+    background-color: red;
+}
+
+#footer img:hover {
+    opacity: 0.3;
+}
+
+@media only screen and (max-width: 600px) {
+    #footer div a {
+        display: flex;
+        align-items: center;
+    }
+    #header h1 {
+        font-size: var(--header-text-size-mobile);
+    }
+    .article h1 {
+        font-size: var(--article-h1-text-size-mobile);
+    }
+    .article p {
+        font-size: var(--article-p-text-size-mobile);
+    }
+    #header {
+        height: 10vh;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #footer div a {
+        padding: 0 3%;
+        display: inline-block;
+        height: 100%;
+    }
+    #header h1 {
+        font-size: var(--header-text-size-desktop);
+    }
+    .article h1 {
+        font-size: var(--article-h1-text-size-desktop);
+    }
+    .article p {
+        font-size: var(--article-p-text-size-desktop);
+    }
+}
+
+#contact-text {
+    font-family: 'Modak', cursive;
+    font-size: 33px;
+    align-self: center;
+    color: tomato;
+}
